@@ -10,7 +10,37 @@ import cors from 'cors'
 
 import helmet from 'helmet'
 
+import mongoose from 'mongoose'
+
 const app = express()
+
+ 
+
+mongoose.connect("mongodb+srv://Mercy0207:0dxU4OrwiQzyFZCN@cluster0.9sr5atl.mongodb.net/?retryWrites=true&w=majority",
+
+    {
+
+      useNewUrlParser: true,
+
+      useUnifiedTopology: true
+
+    }
+
+);
+
+ 
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error: "));
+
+db.once("open", function () {
+
+  console.log("Connected successfully");
+
+});
+
+ 
 
 app.use(bodyParser.json())
 

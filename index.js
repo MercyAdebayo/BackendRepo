@@ -1,24 +1,18 @@
-const express = require('express');
-
-const app = express();
+import server from "./server/express.js"
 
 const port = 3000;
 
  
 
-// Add your server routes and middleware here
+server.get('/', (req, res) => {
 
-// For example:
-
-app.get('/', (req, res) => {
-
-   res.send('Application Started!');
+   res.json({"messsage":"Welcome to the dress store application"});
 
 });
 
  
 
-app.listen(port, () => {
+server.listen(port, () => {
 
   console.log(`Server is running on port ${port}`);
 
