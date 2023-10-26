@@ -12,11 +12,12 @@ import helmet from 'helmet'
 
 import mongoose from 'mongoose'
 
-const app = express()
 
+const app = express()
+const router = express.Router();
  
 
-mongoose.connect("mongodb+srv://Mercy0207:0dxU4OrwiQzyFZCN@cluster0.9sr5atl.mongodb.net/?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://Mercy0207:0dxU4OrwiQzyFZCN@cluster0.9sr5atl.mongodb.net/?retryWrites=true&w=majority/product",
 
     {
 
@@ -32,11 +33,11 @@ mongoose.connect("mongodb+srv://Mercy0207:0dxU4OrwiQzyFZCN@cluster0.9sr5atl.mong
 
 const db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "connection error: "));
+db.on("error", console.error.bind(console, "Error connecting to MongoDB "));
 
 db.once("open", function () {
 
-  console.log("Connected successfully");
+  console.log("Connected to MongoDB successfully");
 
 });
 
@@ -53,5 +54,6 @@ app.use(compress())
 app.use(helmet())
 
 app.use(cors())
+
 
 export default app
