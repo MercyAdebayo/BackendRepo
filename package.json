@@ -1,27 +1,22 @@
 {
-  "name": "301246292_comp229_assignment_2",
+  "name": "updated_assignment",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",
+  "description": "Online Market Application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Mercy Adebayo",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
-    "babel-loader": "^9.1.3",
-    "body-parser": "^1.20.2",
-    "compression": "^1.7.4",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "helmet": "^7.0.0",
-    "mongoose": "^7.6.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^7.6.3"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   }
 }
